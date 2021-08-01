@@ -17,3 +17,13 @@ And for the Vue we need to install artisan vue:
 ```shell
 php artisan ui vue
 ```
+
+After that open the <b>.env</b> file and set your database information init. Like database name, server, port ....
+
+### Note
+If you got the error "<i>No Application Encryption Key Has Been Specified</i>" just run the command bellow:
+```shell
+php artisan key:generate
+```
+Before using Laravel's encrypter, you must set a key option in your config/app.php configuration file.<br />
+Click [here](https://laravel.com/docs/7.x/encryption#configuration) for more.
