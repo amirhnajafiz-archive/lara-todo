@@ -27,3 +27,8 @@ php artisan key:generate
 ```
 Before using Laravel's encrypter, you must set a key option in your config/app.php configuration file.<br />
 Click [here](https://laravel.com/docs/7.x/encryption#configuration) for more.
+
+And for the final setup use the following command:
+```shell
+npm run watch
+```
