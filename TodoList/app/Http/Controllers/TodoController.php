@@ -39,7 +39,14 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $todo = new Todo();
+        $todo->todo = $request->todo;
+        $todo->save();
+
+        return response()->json([
+            'todo' => $todo,
+            'status' => 'Success'
+        ]);
     }
 
     /**
