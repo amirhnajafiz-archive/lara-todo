@@ -7,7 +7,7 @@
     <button class="edit">
       <font-awesome-icon icon="edit" />
     </button>
-    <button class="delete">
+    <button class="delete" @click="removeTodo()">
       <font-awesome-icon icon="trash" />
     </button>
   </div>
@@ -24,6 +24,16 @@ export default {
                 if (response.status >= 200 && response.status < 300)
                 {
                     alert("Item updated successfully.");
+                    this.$emit('reloadTodos');
+                }
+            })
+        },
+        removeTodo() {
+            axios.get('api/todo/delete/'+this.item.id).then((response) => {
+                if (response.status >= 200 && response.status < 300)
+                {
+                    alert("Item deleted successfully.")
+                    this.$emit('reloadTodos');
                 }
             })
         }
