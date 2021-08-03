@@ -1,6 +1,10 @@
 # Lara-Todo
 
-This is a course that I took at Udmey, to create a website with Laravel and Vue.js
+This is a course that I took at Udmey, to create a todo website with Laravel and Vue.js
+
+<p align="center">
+    <img src="assets/demo.gif" width="500" />
+</p>
 
 ## Start
 First we need to download and setup <b>Composer</b>. After that we setup the project:
