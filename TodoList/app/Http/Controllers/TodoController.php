@@ -82,11 +82,7 @@ class TodoController extends Controller
     {
         $todo = Todo::findOrFail($id);
 
-        $todo->todo = $request->todo;
-        if ($request->has('completed')) 
-        {
-            $todo->completed = TRUE;
-        }
+        $todo->completed = $request->completed;
 
         $todo->save();
 

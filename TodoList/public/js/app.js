@@ -11924,6 +11924,7 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (response) {
           if (response.status >= 200 && response.status < 300) {
             _this.item.name = "";
+            location.reload();
           }
         });
       }
@@ -11994,7 +11995,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['item']
+  props: ['item'],
+  methods: {
+    updateTodo: function updateTodo() {
+      axios.post('api/todo/update/' + this.item.id, {
+        completed: this.item.completed
+      }).then(function (response) {
+        if (response.status >= 200 && response.status < 300) {
+          alert("Item updated successfully.");
+        }
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -12036,7 +12048,6 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('api/todos').then(function (response) {
         if (response.status === 200) {
           _this.items = response.data.todos;
-          console.log(response.data.todos);
         }
       });
     }
@@ -48585,27 +48596,32 @@ var render = function() {
           : _vm.item.completed
       },
       on: {
-        change: function($event) {
-          var $$a = _vm.item.completed,
-            $$el = $event.target,
-            $$c = $$el.checked ? true : false
-          if (Array.isArray($$a)) {
-            var $$v = null,
-              $$i = _vm._i($$a, $$v)
-            if ($$el.checked) {
-              $$i < 0 && _vm.$set(_vm.item, "completed", $$a.concat([$$v]))
+        change: [
+          function($event) {
+            var $$a = _vm.item.completed,
+              $$el = $event.target,
+              $$c = $$el.checked ? true : false
+            if (Array.isArray($$a)) {
+              var $$v = null,
+                $$i = _vm._i($$a, $$v)
+              if ($$el.checked) {
+                $$i < 0 && _vm.$set(_vm.item, "completed", $$a.concat([$$v]))
+              } else {
+                $$i > -1 &&
+                  _vm.$set(
+                    _vm.item,
+                    "completed",
+                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                  )
+              }
             } else {
-              $$i > -1 &&
-                _vm.$set(
-                  _vm.item,
-                  "completed",
-                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                )
+              _vm.$set(_vm.item, "completed", $$c)
             }
-          } else {
-            _vm.$set(_vm.item, "completed", $$c)
+          },
+          function($event) {
+            return _vm.updateTodo()
           }
-        }
+        ]
       }
     }),
     _vm._v(" "),

@@ -26,6 +26,7 @@ export default {
                     if (response.status >= 200 && response.status < 300)
                     {
                         this.item.name = "";
+                        location.reload(); 
                     }
                 })
             }

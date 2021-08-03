@@ -23,7 +23,6 @@ export default {
                 if (response.status === 200)
                 {
                     this.items = response.data.todos;
-                    console.log(response.data.todos)
                 }
             })
         }
