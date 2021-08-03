@@ -1,7 +1,9 @@
 <template>
   <div class="addItem">
       <input type="text" class="input" placeholder="Add todo..." />
-      <button class="addButton"></button>
+      <button class="addButton">
+          <font-awesome-icon icon="plus" class="plus" />
+      </button>
   </div>
 </template>
 
@@ -27,7 +29,7 @@ export default {
     border-width: 1px;
     outline: none;
     padding: 5px;
-    height: 30px;
+    height: 42px;
     width: 100%;
 }
 
@@ -40,5 +42,10 @@ export default {
     border-top-right-radius: 4px;
     border-width: 1px;
     background-color: white;
+}
+
+.plus {
+    font-size: 20px;
+    color: blue;
 }
 </style>
