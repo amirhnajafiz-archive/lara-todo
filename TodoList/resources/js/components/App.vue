@@ -2,8 +2,8 @@
   <div>
     <h1 style="margin-top: 200px; text-align: center">Todo List</h1>
     <div class="todoListContainer">
-        <add-item-form />
-        <list-view />
+        <add-item-form v-on:reloadTodos="updateTodos()" />
+        <list-view ref="todoView" />
     </div>
   </div>
 </template>
@@ -16,6 +16,11 @@ export default {
   components: {
       AddItemForm,
       ListView
+  },
+  methods: {
+    updateTodos() {
+      this.$refs.todoView.getTodos();
+    }
   }
 };
 </script>

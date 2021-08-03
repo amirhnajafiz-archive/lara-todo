@@ -11924,7 +11924,8 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function (response) {
           if (response.status >= 200 && response.status < 300) {
             _this.item.name = "";
-            location.reload();
+
+            _this.$emit("reloadTodos");
           }
         });
       }
@@ -11963,6 +11964,11 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     AddItemForm: _AddItemForm_vue__WEBPACK_IMPORTED_MODULE_0__.default,
     ListView: _ListView_vue__WEBPACK_IMPORTED_MODULE_1__.default
+  },
+  methods: {
+    updateTodos: function updateTodos() {
+      this.$refs.todoView.getTodos();
+    }
   }
 });
 
@@ -48566,7 +48572,17 @@ var render = function() {
     _c(
       "div",
       { staticClass: "todoListContainer" },
-      [_c("add-item-form"), _vm._v(" "), _c("list-view")],
+      [
+        _c("add-item-form", {
+          on: {
+            reloadTodos: function($event) {
+              return _vm.updateTodos()
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("list-view", { ref: "todoView" })
+      ],
       1
     )
   ])
