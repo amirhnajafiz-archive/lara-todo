@@ -11906,6 +11906,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -11919,7 +11924,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       if (this.item.name !== "") {
-        axios.post('api/todo/store', {
+        axios.post("api/todo/store", {
           todo: this.item.name
         }).then(function (response) {
           if (response.status >= 200 && response.status < 300) {
@@ -12001,29 +12006,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['item'],
+  props: ["item"],
   methods: {
     updateTodo: function updateTodo() {
       var _this = this;
 
-      axios.post('api/todo/update/' + this.item.id, {
+      axios.post("api/todo/update/" + this.item.id, {
         completed: this.item.completed
       }).then(function (response) {
         if (response.status >= 200 && response.status < 300) {
           alert("Item updated successfully.");
 
-          _this.$emit('reloadTodos');
+          _this.$emit("reloadTodos");
         }
       });
     },
     removeTodo: function removeTodo() {
       var _this2 = this;
 
-      axios.get('api/todo/delete/' + this.item.id).then(function (response) {
+      axios.get("api/todo/delete/" + this.item.id).then(function (response) {
         if (response.status >= 200 && response.status < 300) {
           alert("Item deleted successfully.");
 
-          _this2.$emit('reloadTodos');
+          _this2.$emit("reloadTodos");
         }
       });
     }
@@ -12066,7 +12071,7 @@ __webpack_require__.r(__webpack_exports__);
     getTodos: function getTodos() {
       var _this = this;
 
-      axios.get('api/todos').then(function (response) {
+      axios.get("api/todos").then(function (response) {
         if (response.status === 200) {
           _this.items = response.data.todos;
         }
@@ -16636,7 +16641,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.addItem {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    margin-bottom: 25px;\n}\n.input {\r\n    border-style: solid;\r\n    border-color: blue;\r\n    border-bottom-left-radius: 4px;\r\n    border-top-left-radius: 4px;\r\n    border-width: 1px;\r\n    outline: none;\r\n    padding: 5px;\r\n    height: 42px;\r\n    width: 100%;\n}\n.addButton {\r\n    height: 42px;\r\n    width: 42px;\r\n    border-style: solid;\r\n    border-color:  blue;\r\n    border-bottom-right-radius: 4px;\r\n    border-top-right-radius: 4px;\r\n    border-width: 1px;\r\n    background-color: white;\n}\n.plus {\r\n    font-size: 20px;\r\n    color: blue;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.addItem {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin-bottom: 25px;\n}\n.input {\r\n  border-style: solid;\r\n  border-color: blue;\r\n  border-bottom-left-radius: 4px;\r\n  border-top-left-radius: 4px;\r\n  border-width: 1px;\r\n  outline: none;\r\n  padding: 5px;\r\n  height: 42px;\r\n  width: 100%;\n}\n.addButton {\r\n  height: 42px;\r\n  width: 42px;\r\n  border-style: solid;\r\n  border-color: blue;\r\n  border-bottom-right-radius: 4px;\r\n  border-top-right-radius: 4px;\r\n  border-width: 1px;\r\n  background-color: white;\n}\n.plus {\r\n  font-size: 20px;\r\n  color: blue;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -16660,7 +16665,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.todoListContainer[data-v-332fccf4] {\n    width: 400px;\n    margin: auto;\n    margin-top: 50px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.todoListContainer[data-v-332fccf4] {\n  width: 400px;\n  margin: auto;\n  margin-top: 50px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -16708,7 +16713,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.item {\r\n    padding: 12px;\r\n    margin-top: 5px;\r\n    border-style: solid;\r\n    border-color: blue;\r\n    border-radius: 7px;\r\n    border-width: 1px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.item {\r\n  padding: 12px;\r\n  margin-top: 5px;\r\n  border-style: solid;\r\n  border-color: blue;\r\n  border-radius: 7px;\r\n  border-width: 1px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

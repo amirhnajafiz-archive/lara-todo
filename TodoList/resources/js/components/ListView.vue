@@ -1,45 +1,44 @@
 <template>
-    <div>
-        <div v-for="(item, index) in items" :key="index">
-            <list-item :item="item" v-on:reloadTodos="getTodos()" class="item" />
-        </div>
+  <div>
+    <div v-for="(item, index) in items" :key="index">
+      <list-item :item="item" v-on:reloadTodos="getTodos()" class="item" />
     </div>
+  </div>
 </template>
 
 <script>
-import ListItem from './ListItem.vue'
+import ListItem from "./ListItem.vue";
 export default {
-    components: {
-        ListItem
-    },
-    data() {
-        return {
-            items: []
+  components: {
+    ListItem,
+  },
+  data() {
+    return {
+      items: [],
+    };
+  },
+  methods: {
+    getTodos() {
+      axios.get("api/todos").then((response) => {
+        if (response.status === 200) {
+          this.items = response.data.todos;
         }
+      });
     },
-    methods: {
-        getTodos() {
-            axios.get('api/todos').then((response) => {
-                if (response.status === 200)
-                {
-                    this.items = response.data.todos;
-                }
-            })
-        }
-    },
-    created() {
-        this.getTodos();
-    }
-}
+  },
+  created() {
+    this.getTodos();
+  },
+};
 </script>
 
 <style>
 .item {
-    padding: 12px;
-    margin-top: 5px;
-    border-style: solid;
-    border-color: blue;
-    border-radius: 7px;
-    border-width: 1px;
+  padding: 12px;
+  margin-top: 5px;
+  border-style: solid;
+  border-color: blue;
+  border-radius: 7px;
+  border-width: 1px;
 }
 </style>
