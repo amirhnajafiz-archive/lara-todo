@@ -32,3 +32,15 @@ And for the final setup use the following command:
 ```shell
 npm run watch
 ```
+
+## Run
+When you want to run the application, first you need to setup the server by the following command:
+```shell
+php artisan serv
+```
+This will create a local server for you.
+
+And you need to run the following code for the front application:
+```shell
+npm run watch
+```
