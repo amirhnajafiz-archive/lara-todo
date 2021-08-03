@@ -20,9 +20,10 @@ export default {
     methods: {
         getTodos() {
             axios.get('api/todos').then((response) => {
-                if (response === 200)
+                if (response.status === 200)
                 {
                     this.items = response.data.todos;
+                    console.log(response.data.todos)
                 }
             })
         }
